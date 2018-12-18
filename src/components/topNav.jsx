@@ -6,8 +6,16 @@ export default class TopNav extends React.Component {
   render() {
     return(
       <nav className="top-nav">
-        <Link className="nav-brand" to="/">
-        </Link>
+        <div>
+          <Link to="/" className="corp-container">
+            <div className="nav-brand" >
+            </div>
+            <ul className="info">
+              <li>医会播</li>
+              <li>医学会议|直播|交流</li>
+            </ul>
+          </Link>
+        </div>
         <div className="nav-collapse">
           <ul className="nav-list">
             {
