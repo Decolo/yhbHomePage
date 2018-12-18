@@ -1,0 +1,84 @@
+.about-container {
+  width: 100%;
+  margin-top: 20px;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.219);
+  padding: 50px;
+  .about-text .row {
+    text-indent: 20px;
+  }
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2c55a2;
+  }
+  .about-text {
+    h4 {
+      margin-top: 20px;
+      font-weight: 600;
+      font-size: 1.25rem;
+    }
+    p {
+      margin-top: 10px;
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+  }
+  .service {
+    margin-top: 80px;
+    h3 {
+      margin-bottom: 20px;
+    }
+    .service-list {
+      li {
+        display: flex;
+        margin-bottom: 20px;
+        align-items: center;
+        h4 {
+          flex: 1;
+          color: #2c55a2;
+          font-weight: 600;
+          
+        }
+        p {
+          flex: 2;
+          margin-top: 10px;
+          font-size: 1.1rem;
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+  .slogan {
+    margin-top: 80px;
+    font-weight: 800;
+    font-size: 2.5rem;
+    color: #2c55a2;
+  }
+  .contact {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    li {
+      margin-bottom: 5px;
+      font-weight: 600;
+      color: rgb(88, 88, 88)
+    }
+    .code-container {
+      margin-left: 20px;
+      display: flex;
+      .public, .weapp {
+        width: 100px;
+        height: 100px;
+        background-size: cover;
+        
+      }
+      .public {
+        background-image: url('../../img/public.jpg');
+        margin-right: 10px;
+      }
+      .weapp {
+        background-image: url('../../img/qr_code.jpg')
+      }
+    }
+  }
+}

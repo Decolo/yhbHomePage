@@ -1,0 +1,61 @@
+.live-list {
+  margin-top: 10px;
+  .live-item {
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.205);
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 4px;
+    &:hover {
+      transform: scale(1.01);
+      transition-duration: .2s;
+      box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.459);
+    }
+    .cover-img-container {
+      float: left;
+      width: 320px;
+      height: 100%;
+      overflow: hidden;
+      img {
+        width: 100%;
+      }
+    }
+    .text-content {
+      float: left;
+      margin-left: 20px;
+    }
+    .title {
+      font-weight: 500;
+      font-size: 2rem;
+      display: inline-block;
+      line-height: 1.5;
+      word-wrap: break-word;
+    }
+    .lecturer {
+      font-weight: 500;
+      font-size: 1.5rem;
+      margin-top: 10px;
+      color: #2c55a2;
+    }
+    
+    .date {
+      margin-top: 10px;
+      font-size: 1rem;
+      color: rgb(129, 129, 129);
+    }
+    .start{
+      display: block;
+      float: right; 
+      font-weight: 700;
+      border-radius: 6px;
+      background-color: #3e2ca2;
+      color: #fff;
+      padding: 10px; 
+    }
+    .line {
+      margin-top: 20px;
+      border-top: 1px solid rgb(204, 204, 204);
+    }
+  }  
+}
+
+
