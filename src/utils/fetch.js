@@ -1,8 +1,8 @@
 
 import axios from 'axios'
 import qs from 'qs'
-// const baseURL = 'https://www.medicalsee.com'
-const baseURL = ''
+const baseURL = 'https://www.medicalsee.com'
+// const baseURL = ''
 
 const fetch = config => {
   config.baseURL = baseURL
@@ -22,7 +22,7 @@ const fetch = config => {
     }
   }).catch(error => {
     console.log(error)
-    debugger
+    // debugger
     if (error instanceof Error) {
       alert('发生错误,请检查网络设置或联系技术人员')
     } else {

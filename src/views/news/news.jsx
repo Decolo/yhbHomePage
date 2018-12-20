@@ -1,40 +1,8 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import Main from '@/components/main'
 import ReactSwiper from 'reactjs-swiper'
 import Pagination from 'react-js-pagination'
-import newsImg_1 from '../../img/news_banner_1.png'
-import newsImg_2 from '../../img/news_banner_2.png'
-import newsimg_3 from '../../img/news_banner_3.png'
 import './index.scss'
-
-const swiperItems = [{
-  image: newsImg_1,
-  link: 'https://mp.weixin.qq.com/s/QmcEOzuy9Xy6u_LLWUINHg',
-  title: '"政策驱动，智慧赋能"| 2018第五届互联网+健康中国大会暨第二届"健康中国"杭州峰会成功举办'
-}, {
-  image: newsImg_2,
-  link: 'http://samr.saic.gov.cn/gg/201811/t20181111_276981.html',
-  title: '2018年11月11日市场监管总局关于就《中华人民共和国疫苗管理法（征求意见稿）》公开征求意见',
-}, {
-  image: newsimg_3,
-  link: 'http://www.drvoice.cn/article/3814',
-  title: '中国CTOCC CTO-PCI推荐路径专家共识发布暨“一带一路”共建启动',
-}]
-
-const news = [{
-  imgUrl: newsImg_1,
-  newsUrl: 'https://mp.weixin.qq.com/s/QmcEOzuy9Xy6u_LLWUINHg',
-  title: '"政策驱动，智慧赋能"| 2018第五届互联网+健康中国大会暨第二届"健康中国"杭州峰会成功举办',
-}, {
-  imgUrl: newsImg_2,
-  newsUrl: 'http://samr.saic.gov.cn/gg/201811/t20181111_276981.html',
-  title: '2018年11月11日市场监管总局关于就《中华人民共和国疫苗管理法（征求意见稿）》公开征求意见',
-}, {
-  imgUrl: newsimg_3,
-  newsUrl: 'http://www.drvoice.cn/article/3814',
-  title: '中国CTOCC CTO-PCI推荐路径专家共识发布暨“一带一路”共建启动',
-}]
 
 export default class News extends React.Component {
   state = {
@@ -46,6 +14,32 @@ export default class News extends React.Component {
       total: 3
     }
   }
+  componentDidMount() {
+    const newsListStr = localStorage.getItem('newsList')
+    // console.log(JSON.parse(newsListStr))
+    const newsList = newsListStr ? JSON.parse(newsListStr) : []
+    const swiperItems = []
+    const news = []
+    
+    newsList.forEach(item => {
+      const { bannerImg, contentUrl, title } = item
+      news.push({
+        imgUrl: bannerImg,
+        newsUrl: contentUrl,
+        title,
+      })
+
+      swiperItems.push({
+        image: bannerImg,
+        link: contentUrl,
+        title
+      })
+    })
+    this.setState({
+      news,
+      swiperItems
+    })
+  }
   handlePaginationChange = (page) => {
     this.setState({
       pagination: {
@@ -55,7 +49,7 @@ export default class News extends React.Component {
     })
   }
   render() {
-    const { pagination } = this.state
+    const { pagination, news, swiperItems } = this.state
     const { page, itemsCountPerPage, total } = pagination
     return (
       <Main>
