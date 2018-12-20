@@ -1,8 +1,8 @@
 
 import axios from 'axios'
 import qs from 'qs'
-// const baseURL = 'https://www.medicalsee.com'
-const baseURL = ''
+const baseURL = 'https://www.medicalsee.com'
+// const baseURL = ''
 
 const fetch = config => {
   config.baseURL = baseURL
