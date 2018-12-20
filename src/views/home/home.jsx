@@ -153,7 +153,7 @@ export default class Home extends React.Component {
                   return (
                     <li className="news item" key={index + 'news'}>
                       <div className="cover-img-container">
-                        <a className="video-cover" href={contentUrl}>
+                        <a className="img-cover" href={contentUrl}>
                           <img src={bannerImg} />
                         </a>
                       </div>
